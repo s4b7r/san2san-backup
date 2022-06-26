@@ -11,9 +11,14 @@ rm $SCRIPT_PATH/localbackup/weekly_this_week/*
 cd $SCRIPT_PATH/localbackup/mirror_destination
 for D in *; do
     if [ -d "${D}" ]; then
+        echo $D
+        cd $D
+        echo `pwd`
         git remote update
+        cd ..
     fi
 done
+cd $SCRIPT_PATH
 7z a "$SCRIPT_PATH/localbackup/weekly_this_week/weekly_this_week_$(date +%Y-%m-%d).7z" "$SCRIPT_PATH/localbackup/mirror_destination/*"
 
 "$HOME/scripts/vpn/vpndisconnect.sh"
