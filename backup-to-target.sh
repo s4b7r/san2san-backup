@@ -9,5 +9,7 @@ ftp_user="FTP USER"
 ftp_host="FTP HOST"
 ftp_path="FTP PATH"
 ftp_port="FTP PORT"
-rclone copy --ftp-host=$ftp_host --ftp-port=$ftp_port --ftp-user=$ftp_user --ftp-pass=$ftp_pass "$SCRIPT_PATH/localbackup/weekly_this_week/" :ftp:$ftp_path/weekly_this_month
-rclone copy --ftp-host=$ftp_host --ftp-port=$ftp_port --ftp-user=$ftp_user --ftp-pass=$ftp_pass "$SCRIPT_PATH/localbackup/daily_last_week/" :ftp:$ftp_path/daily_last_week
+# rclone copy --ftp-host=$ftp_host --ftp-port=$ftp_port --ftp-user=$ftp_user --ftp-pass=$ftp_pass "$SCRIPT_PATH/localbackup/weekly_this_week/" :ftp:$ftp_path/weekly_this_month
+# rclone copy --ftp-host=$ftp_host --ftp-port=$ftp_port --ftp-user=$ftp_user --ftp-pass=$ftp_pass "$SCRIPT_PATH/localbackup/daily_last_week/" :ftp:$ftp_path/daily_last_week
+
+rclone sync --ftp-host=$ftp_host --ftp-port=$ftp_port --ftp-user=$ftp_user --ftp-pass=$ftp_pass "$SCRIPT_PATH/localbackup/mirror_destination/" :ftp:$ftp_path/mirror_destination
