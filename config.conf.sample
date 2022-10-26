@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+src_host="sub.dom.tld"
+smb_user="mike"
+smb_domain="dommain"
+src_path="some/path/to/copy/from"
+dst_host="dst.dom.tld"
+dst_path="path/for/files/to/go"
